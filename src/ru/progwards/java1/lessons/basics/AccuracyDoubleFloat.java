@@ -7,11 +7,11 @@ public class AccuracyDoubleFloat {
         System.out.println(calculateAccuracy(6371.2));
     }
     public static double volumeBallDouble(double radius){
-        double fourThreePi = (4/3)*(314/100);
+        double fourThreePi = (4./3)*(314./100);
         return (fourThreePi*Math.pow(radius,3));
     }
     public static float volumeBallFloat(float radius){
-        double fourThreePi = (4/3)*(314/100);
+        double fourThreePi = (4./3)*(314./100);
         return (float)(fourThreePi*Math.pow(radius,3));
     }
     public static double calculateAccuracy(double radius){
