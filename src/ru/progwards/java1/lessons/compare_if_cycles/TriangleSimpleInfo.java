@@ -4,22 +4,24 @@ public class TriangleSimpleInfo {
     public static void main(String[] args) {
 
 
-        System.out.println(maxSide(1, 4, 3));
+        System.out.println(maxSide(10, 10, 8));
         System.out.println(minSide(4, 5, 2));
         System.out.println(isEquilateralTriangle(2, 2, 2));
 
     }
 
     public static int maxSide(int a, int b, int c) {
-        if (a > b & a > c) return a;
-        else if (b > a & b > c) return b;
-        else return c;
+        if ((a > b & a > c) | (a >= b & a > c) | (a > b & a >= c)) return a;
+        else if ((b > a & b > c) | (b >= a & b > c) | (b > a & b >= c)) return b;
+        else if ((c > a & c > b) | (c >= a & c > b) | (c > a & c >= b)) return c;
+        else return 0;
     }
 
     public static int minSide(int a, int b, int c) {
-        if (a < b & a < c) return a;
-        else if (b < a & b < c) return b;
-        else return c;
+        if ((a < b & a < c) | (a <= b & a < c) | (a < b & a <= c)) return a;
+        else if ((b < a & b < c) | (b <= a & b < c) | (b < a & b <= c)) return b;
+        else if ((c < a & c < b) | (c <= a & c < b) | (c < a & c <= b)) return c;
+        else return 0;
     }
 
     public static boolean isEquilateralTriangle(int a, int b, int c) {

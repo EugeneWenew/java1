@@ -2,9 +2,9 @@ package ru.progwards.java1.lessons.compare_if_cycles;
 
 public class CyclesGoldenFibo {
     public static void main(String[] args) {
-        /*System.out.println(containsDigit(12346789, 5));
-        System.out.println(fiboNumber(10));
-        System.out.println(isGoldenTriangle(55, 55, 34));*/
+        //System.out.println(containsDigit(0, 0));
+        //System.out.println(fiboNumber(10));
+        //System.out.println(isGoldenTriangle(55, 55, 34));
         int fibo15 = 15;
         for (int i = 0; i <= fibo15; i++) {
             if (fiboNumber(i) <= 100) {
@@ -28,6 +28,8 @@ public class CyclesGoldenFibo {
                 res = true;
             else continue;
         }
+        if (digit == 0 & number == 0)
+            res = true;
         return res;
     }
 
@@ -42,6 +44,7 @@ public class CyclesGoldenFibo {
             i2 = i3;
             count++;
         }
+        if (n == 0 | n == 1 | n == 2) i3 = 1;
         return i3;
     }
 
@@ -53,6 +56,4 @@ public class CyclesGoldenFibo {
             return true;
         else return false;
     }
-
-
 }
