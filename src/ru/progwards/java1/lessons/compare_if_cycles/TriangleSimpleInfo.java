@@ -5,7 +5,7 @@ public class TriangleSimpleInfo {
 
 
         System.out.println(maxSide(10, 10, 8));
-        System.out.println(minSide(4, 5, 2));
+        System.out.println(minSide(3, 3, 4));
         System.out.println(isEquilateralTriangle(2, 2, 2));
 
     }
