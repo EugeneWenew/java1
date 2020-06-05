@@ -34,7 +34,7 @@ public class ComplexNum {
     public ComplexNum mul(ComplexNum num) {
         int a1, b1;
         a1 = (this.a * num.a - this.b * num.b);
-        b1 = (this.b * num.a - this.a * num.b);
+        b1 = (this.b * num.a + this.a * num.b);
         return new ComplexNum(a1, b1);
     }
 

@@ -22,7 +22,7 @@ public class Animal {
     enum FoodKind {UNKNOWN, HAY, CORN}
 
     public String toString() {
-        return ("I am" + this.getKind() + ", eat" + this.getFoodKind());
+        return ("I am " + this.getKind() + ", eat " + this.getFoodKind());
     }
 
     public double getWeight() {
