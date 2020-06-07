@@ -41,7 +41,7 @@ public class Animal {
     }
 
     public String toStringFull() {
-        return ("I am" + this.getKind() + ", eat" + this.getFoodKind() + this.calculateFoodWeight());
+        return ("I am " + this.getKind() + ", eat " + this.getFoodKind() +" "+ this.calculateFoodWeight());
     }
 
 

@@ -6,7 +6,8 @@ public class Test1 {
         double d = 9999999999999999999999999999999999999999.;
         float f = (float) d;
         System.out.println("\n"+ f);
-
+        double x = 5 / 2;
+        System.out.println(x);
 
     }
 }
