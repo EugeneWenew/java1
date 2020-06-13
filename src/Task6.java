@@ -17,6 +17,8 @@
 //int a[][] = {a1, a2, a3};
 
 
+import java.util.Arrays;
+
 public class Task6 {
     public static void main(String[] args) {
 
@@ -28,6 +30,29 @@ public class Task6 {
         Rectangle rec2 = new Rectangle(7, 8);
         System.out.println(rec1.compareTo(rec2));
 
+//        int[] a1 = {1, 1, 1, 1, 3};
+//        int[] a2 = new int[5];
+//        Arrays.fill(a2, 1);
+//        a2[4] = 3;
+//        System.out.println(Arrays.equals(a1, a2));
+
+//        int[] a1 = {12, 5, 0, 58, 36};
+//        int[] a2 = Arrays.copyOf(a1, a1.length);
+//        Arrays.sort(a2);
+//        System.out.println(Arrays.equals(a1, a2));
+
+        int[] a1 = {12, 5, 0, 58, 36};
+        int[] a2 = Arrays.copyOf(a1, a1.length);
+        a2[2] = 0;
+        System.out.println(Arrays.equals(a1, a2));
+
+
+
+    }
+    public int arrayMax(int[] a){
+        if (a.length==0) return 0;
+        Arrays.sort(a);
+        return a[a.length-1];
     }
 
     public int sumArrayItems(int[] a) {
@@ -62,6 +87,7 @@ class Rectangle {
         return s1.compareTo(s2);
     }
 }
+
 
 
 
