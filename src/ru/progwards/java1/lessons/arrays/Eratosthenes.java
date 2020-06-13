@@ -1,5 +1,6 @@
 package ru.progwards.java1.lessons.arrays;
 
+import java.time.chrono.Era;
 import java.util.Arrays;
 
 public class Eratosthenes {
@@ -8,7 +9,7 @@ public class Eratosthenes {
 
 
     public static void main(String[] args) {
-        Eratosthenes era = new Eratosthenes(5);
+        Eratosthenes era = new Eratosthenes(50);
         System.out.println(era);
     }
 
@@ -17,6 +18,7 @@ public class Eratosthenes {
 
     public Eratosthenes(int N) {
         this.N = N;
+        boolean[] sieve = new boolean[N];
         Arrays.fill(sieve, true);
         sift();
 
