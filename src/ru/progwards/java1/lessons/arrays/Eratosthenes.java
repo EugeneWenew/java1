@@ -4,21 +4,21 @@ import java.util.Arrays;
 
 public class Eratosthenes {
     int N;
-    Boolean[] sieve = new Boolean[N];
+    Boolean[] sieve;
 
     public Eratosthenes(int N) {
         this.N = N;
-        sieve = new Boolean[N];
+        this.sieve = new Boolean[N];
         Arrays.fill(sieve, true);
         sift();
     }
 
     private void sift() {
         int i, j;
-        for (i = 1; i < sieve.length - 1; i++) {
-            for (j = 1; j < sieve.length - 1; j++) {
+        for (i = 1; i < sieve.length ; i++) {
+            for (j = 1; j < sieve.length ; j++) {
                 if (i * j <= 3) continue;
-                ;
+
                 while ((sieve.length - 1) >= i * j) {
                     sieve[j * i] = false;
                     j++;
