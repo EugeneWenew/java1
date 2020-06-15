@@ -17,7 +17,10 @@ public class Eratosthenes {
         int i, j;
         for (i = 1; i < sieve.length; i++) {
             for (j = 1; j < sieve.length; j++) {
-                if (i * j <= 3) continue;
+                if (i * j <= 3) {
+                    sieve[i*j] = true;
+                    continue;
+                }
 
                 while ((sieve.length - 1) >= i * j) {
                     sieve[j * i] = false;
@@ -27,8 +30,9 @@ public class Eratosthenes {
         }
     }
 
-    public boolean isSimple(int n){
-        return this.sieve[sieve.length-1];
+    public boolean isSimple(int n) {
+
+        return this.sieve[sieve.length - 1];
     }
 
 
