@@ -1,36 +1,36 @@
 public class Вопросы {
     public static metod1() {
-        //передача переменных из статика в нестатик
-        //вызов статика из других методов
+                                                                     //передача переменных из статика в нестатик
+                                                                     //вызов статика из других методов
     }
 
     public metod2() {
-        //тоже
-        //тоже
+                                                                     //тоже
+                                                                     //тоже
     }
 
 
-    public static nekotoryjMetod_1() {
+    public static void nekotoryjMetod_1() {
 
     }
 
 
-    public nekotoryjMetod_2() {
+    public void nekotoryjMetod_2() {
 
     }
 }
 
 
 public class primerConstructora {
-    int N;                                              //поле класса / N - свойство
+    int N;                                                           //поле класса / N - свойство
 
     primerConstructora(int N) {
-        this.N =                                             //инициализация N в конструкторе / физический смысл
+        this.N =                                                     //инициализация N в конструкторе / физический смысл
                 N =
     }
 
     public metodConstructora() {
-        this.N                                              //вызов переменной N в методе
+        this.N                              //вызов переменной N в методе
     }
 
 
@@ -38,13 +38,14 @@ public class primerConstructora {
         //вызов метода void в другом методе
     }
 
+
     public static void main(String[] args) {
-        .metodVoid();                                   //как вызывается void/ не void метод
+        .metodVoid();                                                //как вызывается void/ не void метод
 
 
+    }
+
+
+    public toString() {                                              //переопределение toString / зачем
     }
 }
-
-
-    public toString() {                                //переопределение toString / зачем
-    }
