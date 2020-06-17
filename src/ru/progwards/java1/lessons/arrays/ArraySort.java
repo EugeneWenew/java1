@@ -9,7 +9,7 @@ public class ArraySort {
 
         int SWAP;
         for (int i = 0; i < a.length; i++) {
-            for (int j = i; j < a.length-1; j++) {
+            for (int j = 0; j < a.length-1; j++) {
                 if (a[j] > a[j + 1]) {
                     SWAP = a[j + 1];
                     a[j + 1] = a[j];
@@ -20,7 +20,7 @@ public class ArraySort {
     }
 
     public static void main(String[] args) {
-        int[] b = {5, 6, 100, 99, 22};
+        int[] b = {-92,22,11,-73,48,-85,-3,96,-7,-17};
         sort(b);
         System.out.println(Arrays.toString(b));
 
