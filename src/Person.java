@@ -25,4 +25,12 @@ public class Person {
     public String getCountry() {
         return country;
     }
+
+    public static void main(String[] args) {
+        String nameValue = "Ivan";
+        Person Petrov = new Person(nameValue, 99);
+        System.out.println(Petrov.age);
+        System.out.println(Petrov.country);
+        System.out.println(Petrov.name);
+    }
 }

@@ -4,32 +4,30 @@ import java.util.Arrays;
 
 public class DIntArray {
     private int[] oldArray;
+    private int[] newArray;
+    private int num;
+    private int pos;
 
     DIntArray() {
     }
 
+    DIntArray(int[] mass, int num, int pos) {
+        this.oldArray = mass;
+        add(num);
+    }
+
     public void add(int num) {
-        int[] newArray = new int[oldArray.length + 1];
-        newArray[newArray.length] = num;
+        this.newArray = new int[oldArray.length + 1];
+        newArray[newArray.length-1] = num;
+
     }
 
-    public void atInsert(int pos, int num) {
-        int[] newInsArray = new int[oldArray.length + 1];
-        for (int i = 0; i < newInsArray.length; i++) {
-            if (i == pos - 1) newInsArray[i] = num;
-            if (i > pos) newInsArray[i + 1] = oldArray[i];
-        }
-    }
 
-    public void atDelete(int pos) {
-        int[] newDelArray = new int[oldArray.length - 1];
-        for (int i = 0; i < newDelArray.length; i++) {
-            if (i == pos - 1) newDelArray[i] = oldArray[i + 1];
-            if (i > pos) newDelArray[i - 1] = oldArray[i];
-        }
-    }
+    public static void main(String[] args) {
 
-    public int at(int pos) {
-        return oldArray[pos];
+        int[] mass = {5, 8, 15, 28, 99, 33, 0, -2};
+        DIntArray opera = new DIntArray(mass, 777, 10);
+        System.out.println(Arrays.toString(mass));
+
     }
 }
