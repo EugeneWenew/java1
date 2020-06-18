@@ -11,22 +11,23 @@ public class DIntArray {
     DIntArray() {
     }
 
-    DIntArray(int[] mass, int num, int pos) {
+    DIntArray(int[] mass) {
         this.oldArray = mass;
-        add(num);
+
     }
 
     public void add(int num) {
-        this.newArray = new int[oldArray.length + 1];
+        newArray = new int[oldArray.length + 1];
+        System.arraycopy(oldArray,0,newArray,0,oldArray.length);
         newArray[newArray.length-1] = num;
-
     }
 
 
     public static void main(String[] args) {
 
         int[] mass = {5, 8, 15, 28, 99, 33, 0, -2};
-        DIntArray opera = new DIntArray(mass, 777, 10);
+        DIntArray opera = new DIntArray(mass);
+        opera.add(777);
         System.out.println(Arrays.toString(mass));
 
     }
