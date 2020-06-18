@@ -54,11 +54,11 @@ public class DIntArray {
         int[] mass = {5, 8, 15, 28, 99, 33, 0, -2};
         DIntArray opera = new DIntArray(mass);
         DIntArray second = new DIntArray(mass, 123, 4);
-//        opera.add(777);
-//        opera.atInsert(5, 66);
-//        opera.atDelete(3);
-//        System.out.println(Arrays.toString(opera.newArray));
-//        System.out.println(Arrays.toString(second.newArray));
+        opera.add(777);
+        opera.atInsert(5, 66);
+        opera.atDelete(3);
+        System.out.println(Arrays.toString(opera.newArray));
+        System.out.println(Arrays.toString(second.newArray));
         opera.atDelete(4);
         System.out.println(Arrays.toString(opera.newArray));
         opera.at(5);
