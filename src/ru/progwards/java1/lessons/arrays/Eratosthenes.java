@@ -41,12 +41,12 @@ public class Eratosthenes {
     }
 
     public static void main(String[] args) {
-        Eratosthenes era = new Eratosthenes(20);
+        Eratosthenes era = new Eratosthenes(50);
 
         System.out.println("N= " + era + ", pole = " + Arrays.toString(era.sieve));
         Eratosthenes.pole = 33;
         System.out.println(era.N);
-        System.out.println(era.isSimple(15));
+        System.out.println(era.isSimple(48));
     }
 
     @Override
