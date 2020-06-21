@@ -9,6 +9,7 @@ public class Binary {
     }
 
     public String toString() {
+        if (num==0) return "00000000";
         String value = "";
         int result = num;
         while (result > 0) {
@@ -16,11 +17,12 @@ public class Binary {
             result = result / 2;
         }
 
+
         return value;
     }
 
     public static void main(String[] args) {
-        Binary VAL = new Binary((byte) 15);
+        Binary VAL = new Binary((byte) 0);
         System.out.println(VAL.toString());
     }
 }
