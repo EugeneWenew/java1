@@ -70,7 +70,8 @@ public class DIntArray {
 //        opera.atDelete(4);
 ////        opera.at(5);
 ////        System.out.println(opera.at(5));
-
+        System.out.println(16/2);
+        System.out.println(16%2);
 
     }
 }
