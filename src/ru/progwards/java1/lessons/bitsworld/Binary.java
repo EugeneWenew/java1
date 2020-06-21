@@ -18,22 +18,22 @@ public class Binary {
             result = result / 2;
             counter++;
         }
-        switch (counter) {
-            case 1:
-                return "0000000" + value;
-            case 2:
-                return "000000" + value;
-            case 3:
-                return "00000" + value;
-            case 4:
-                return "0000" + value;
-            case 5:
-                return "000" + value;
-            case 6:
-                return "00" + value;
-            case 7:
-                return "0" + value;
-        }
+//        switch (counter) {
+//            case 1:
+//                return "0000000" + value;
+//            case 2:
+//                return "000000" + value;
+//            case 3:
+//                return "00000" + value;
+//            case 4:
+//                return "0000" + value;
+//            case 5:
+//                return "000" + value;
+//            case 6:
+//                return "00" + value;
+//            case 7:
+//                return "0" + value;
+//        }
 
 
         return value;
