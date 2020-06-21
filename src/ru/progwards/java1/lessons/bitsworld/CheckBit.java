@@ -5,7 +5,7 @@ public class CheckBit {
         int result = 0;
         for (int i = 0; i <= bitNumber; i++) {
 
-            if (i == bitNumber - 1) {
+            if (i == bitNumber) {
                 result = (byte) (value & 0b1);
 
             }
@@ -17,7 +17,7 @@ public class CheckBit {
     }
 
     public static void main(String[] args) {
-        byte value = (byte) 0b101000000111;
-        System.out.println(checkBit(value, 11));
+        byte value = (byte) 35;
+        System.out.println(checkBit(value, 0));
     }
 }
