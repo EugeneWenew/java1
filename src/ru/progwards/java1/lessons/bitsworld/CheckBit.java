@@ -17,7 +17,7 @@ public class CheckBit {
     }
 
     public static void main(String[] args) {
-        byte value = (byte) 0b10100000;
-        System.out.println(checkBit(value, 8));
+        byte value = (byte) 0b101000000111;
+        System.out.println(checkBit(value, 11));
     }
 }
