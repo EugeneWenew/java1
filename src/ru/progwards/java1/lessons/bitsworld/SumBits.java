@@ -6,7 +6,7 @@ public class SumBits {
         if (value > 0) {
             while (value > 0) {                     //цикл прогона всего числа
                 result += (byte) (value & 0b1);      //выделение правого БИТА переменной value c инкрементом результата
-                value = ((byte) (value >> 1));      //сдвиг вправо с заполнением нулями
+                value = ((byte) (value >>> 1));      //сдвиг вправо с заполнением нулями
             }
             return result;
         } else if (value < 0) {

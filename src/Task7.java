@@ -2,11 +2,11 @@ public class Task7 {
     Grade value;
 
     public static void main(String[] args) {
-//        System.out.println(1 & 0);
-//        System.out.println(1 | 0);
-//        System.out.println(1 & 1);
-//        System.out.println(~1);         // 0
-//        System.out.println(1 | 1);
+        System.out.println(1 & 0);
+        System.out.println(1 | 0);
+        System.out.println(1 & 1);
+        System.out.println(~1);         // 0
+        System.out.println(1 | 1);
         System.out.println(intToGrade(5));
 
         //  int result = value & 0b1;
