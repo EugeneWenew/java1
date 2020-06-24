@@ -1,6 +1,10 @@
 import java.util.Objects;
-//
-//class Rectangle {
+
+public class Task8 {
+}
+
+
+//    class Rectangle {
 //    private double a;
 //    private double b;
 //
