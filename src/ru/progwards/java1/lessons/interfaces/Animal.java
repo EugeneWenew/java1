@@ -16,14 +16,26 @@ public class Animal implements FoodCompare {
     }
 
     public double getFood1kgPrice() {
-        switch (Animal.FoodKind) {
+
+        switch (new FoodKind()) {
             case FoodKind.HAY:
                 return 20;
             case FoodKind.CORN:
                 return 50;
             case FoodKind.UNKNOWN:
+            default:
                 return 0;
         }
+
+    }
+    @Override
+    public int compareFoodPrice(Animal aminal) {
+        return Double.compare(this.getFoodPrice(), aminal.getFoodPrice());
+    }
+
+    public double getFoodPrice() {
+        return this.calculateFoodWeight() * this.getFood1kgPrice();
+
     }
 
     enum AnimalKind {
