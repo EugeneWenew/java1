@@ -1,5 +1,6 @@
 package ru.progwards.java1.lessons.interfaces;
 
+
 public class Animal implements FoodCompare {
     double weight;
 
@@ -17,12 +18,12 @@ public class Animal implements FoodCompare {
 
     public double getFood1kgPrice() {
 
-        switch (new FoodKind()) {
-            case FoodKind.HAY:
+        switch (getFoodKind()) {
+            case HAY:
                 return 20;
-            case FoodKind.CORN:
+            case CORN:
                 return 50;
-            case FoodKind.UNKNOWN:
+            case UNKNOWN:
             default:
                 return 0;
         }

@@ -2,10 +2,7 @@ package ru.progwards.java1.lessons.compare_if_cycles;
 
 public class CyclesGoldenFibo {
     public static void main(String[] args) {
-        //System.out.println(containsDigit(0, 0));
-        //System.out.println(fiboNumber(10));
-        //System.out.println(isGoldenTriangle(55, 55, 34));
-        int fibo15 = 15;
+                int fibo15 = 15;
         for (int i = 0; i <= fibo15; i++) {
             if (fiboNumber(i) <= 100) {
                 for (int n = 0; fiboNumber(n) <= fiboNumber(i); n++) {
