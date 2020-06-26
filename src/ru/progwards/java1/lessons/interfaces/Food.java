@@ -22,20 +22,6 @@ public class Food implements CompareWeight {
         return CompareWeight.CompareResult.GREATER;
     }
 
-    @Override
-    public static void sort(CompareWeight[] a) {
-
-        int SWAP;
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a.length - 1; j++) {
-                if (a[j] > a[j + 1]) {
-                    SWAP = a[j + 1];
-                    a[j + 1] = a[j];
-                    a[j] = SWAP;
-                }
-            }
-        }
-    }
 
     @Override
     public double getWeight() {

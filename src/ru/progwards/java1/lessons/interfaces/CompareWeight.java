@@ -23,6 +23,19 @@ public interface CompareWeight {
 
     public double getWeight();
 
-    public static void sort(CompareWeight[] a);
+
+    public static void sort(CompareWeight[] a) {
+        Food otherFood = (Food) a[a.length];
+        int SWAP;
+        for (int i = 0; i < otherFood; i++) {
+            for (int j = 0; j < otherFood - 1; j++) {
+                if (otherFood[j] > otherFood[j + 1]) {
+                    SWAP = otherFood[j + 1];
+                    otherFood[j + 1] = a[j];
+                    otherFood[j] = SWAP;
+                }
+            }
+        }
+    }
 
 }
