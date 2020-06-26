@@ -1,8 +1,10 @@
 package ru.progwards.java1.lessons.interfaces;
 
 public interface CompareWeight {
+
     public enum CompareResult {LESS, EQUAL, GREATER}
-//    public CompareWeight[] a;
+
+    //    public CompareWeight[] a;
 
 
     /* default*/
@@ -25,17 +27,17 @@ public interface CompareWeight {
 
 
     public static void sort(CompareWeight[] a) {
-        Food otherFood = (Food) a[a.length];
-        int SWAP;
-        for (int i = 0; i < otherFood; i++) {
-            for (int j = 0; j < otherFood - 1; j++) {
-                if (otherFood[j] > otherFood[j + 1]) {
-                    SWAP = otherFood[j + 1];
-                    otherFood[j + 1] = a[j];
-                    otherFood[j] = SWAP;
+        CompareWeight SWAP;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length - 1; j++) {
+                if (a[j] > a[j + 1]) {
+                    SWAP = a[j + 1];
+                    a[j + 1] = a[j];
+                    a[j] = SWAP;
                 }
             }
         }
     }
 
 }
+
