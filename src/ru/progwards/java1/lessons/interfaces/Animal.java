@@ -1,43 +1,8 @@
 package ru.progwards.java1.lessons.interfaces;
 
 
-public class Animal implements FoodCompare {
-    double weight;
+public class Animal implements FoodCompare, CompareWeight {
 
-    public Animal(double weight) {
-        this.weight = weight;
-    }
-
-    public AnimalKind getKind() {
-        return AnimalKind.ANIMAL;
-    }
-
-    public FoodKind getFoodKind() {
-        return FoodKind.UNKNOWN;
-    }
-
-    public double getFood1kgPrice() {
-
-        switch (getFoodKind()) {
-            case HAY:
-                return 20;
-            case CORN:
-                return 50;
-            case UNKNOWN:
-            default:
-                return 0;
-        }
-
-    }
-    @Override
-    public int compareFoodPrice(Animal aminal) {
-        return Double.compare(this.getFoodPrice(), aminal.getFoodPrice());
-    }
-
-    public double getFoodPrice() {
-        return this.calculateFoodWeight() * this.getFood1kgPrice();
-
-    }
 
     enum AnimalKind {
         ANIMAL, COW, HAMSTER, DUCK
@@ -45,13 +10,74 @@ public class Animal implements FoodCompare {
 
     enum FoodKind {UNKNOWN, HAY, CORN}
 
+    double weight;
+
+    public interface FoodCompare {                                              //4
+        public int compareFoodPrice();
+    }
+
+    public double getFood1kgPrice() {
+
+        switch (getFoodKind()) {
+            case HAY:                                                           //1
+                return 20;
+            case CORN:                                                          //1
+                return 50;
+            case UNKNOWN:
+            default:
+                return 0;
+        }
+
+    }
+
+    public Animal(double weight) {
+        this.weight = weight;
+    }
+
+    public AnimalKind getKind() {
+        return AnimalKind.ANIMAL;
+    }                   //1
+
+    public FoodKind getFoodKind() {
+        return FoodKind.UNKNOWN;
+    }                  //1
+
+//
+//    public CompareResult compareWeight(CompareWeight smthHasWeigt) {
+//        Animal otherAnimal = (Animal) smthHasWeigt;
+//        int doubcom = Double.compare(this.getWeight(), otherAnimal.getWeight());             //2
+//        switch (doubcom) {
+//            case (-1):
+//                return CompareWeight.CompareResult.LESS;
+//            case (0):
+//                return CompareWeight.CompareResult.EQUAL;
+//
+//
+//        }
+//        return CompareWeight.CompareResult.GREATER;
+//    }
+
+    @Override
+    public double getWeight() {
+        return this.weight;
+    }
+
+
+    @Override
+    public int compareFoodPrice(Animal animal) {
+        return Double.compare(this.getFoodPrice(), animal.getFoodPrice());
+    }
+
+    public double getFoodPrice() {
+        return this.calculateFoodWeight() * this.getFood1kgPrice();
+
+    }
+
+
     public String toString() {
         return ("I am " + this.getKind() + ", eat " + this.getFoodKind());
     }
 
-    public double getWeight() {
-        return this.weight;
-    }
 
     public double getFoodCoeff() {
         switch (getKind()) {
@@ -63,6 +89,7 @@ public class Animal implements FoodCompare {
     public double calculateFoodWeight() {
         return this.getWeight() * this.getFoodCoeff();
     }
+
 
     public String toStringFull() {
         return ("I am " + this.getKind() + ", eat " + this.getFoodKind() + " " + this.calculateFoodWeight());
@@ -77,4 +104,12 @@ public class Animal implements FoodCompare {
         return Double.compare(animal.getWeight(), getWeight()) == 0;
     }
 
+    public static void main(String[] args) {
+        Cow mu = new Cow (500);
+        Duck kra = new Duck (7);
+        Food meat = new Food(10);
+        System.out.println(mu.compareWeight(meat));
+        System.out.println(mu.compareWeight(kra));
+        System.out.println(kra.compareWeight(meat));
+    }
 }
