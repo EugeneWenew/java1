@@ -42,20 +42,20 @@ public class Animal implements FoodCompare, CompareWeight {
         return FoodKind.UNKNOWN;
     }                  //1
 
-//
-//    public CompareResult compareWeight(CompareWeight smthHasWeigt) {
-//        Animal otherAnimal = (Animal) smthHasWeigt;
-//        int doubcom = Double.compare(this.getWeight(), otherAnimal.getWeight());             //2
-//        switch (doubcom) {
-//            case (-1):
-//                return CompareWeight.CompareResult.LESS;
-//            case (0):
-//                return CompareWeight.CompareResult.EQUAL;
-//
-//
-//        }
-//        return CompareWeight.CompareResult.GREATER;
-//    }
+    @Override
+    public CompareResult compareWeight(CompareWeight smthHasWeigt) {                //через if
+        Animal otherAnimal = (Animal) smthHasWeigt;
+        int doubcom = Double.compare(this.getWeight(), otherAnimal.getWeight());             //2
+        switch (doubcom) {
+            case (-1):
+                return CompareWeight.CompareResult.LESS;
+            case (0):
+                return CompareWeight.CompareResult.EQUAL;
+
+
+        }
+        return CompareWeight.CompareResult.GREATER;
+    }
 
     @Override
     public double getWeight() {
@@ -105,8 +105,8 @@ public class Animal implements FoodCompare, CompareWeight {
     }
 
     public static void main(String[] args) {
-        Cow mu = new Cow (500);
-        Duck kra = new Duck (7);
+        Cow mu = new Cow(500);
+        Duck kra = new Duck(7);
         Food meat = new Food(10);
         System.out.println(mu.compareWeight(meat));
         System.out.println(mu.compareWeight(kra));
