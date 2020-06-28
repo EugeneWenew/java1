@@ -8,7 +8,26 @@ public interface CompareWeight {
 
 
     /* default*/
-    CompareResult compareWeight(CompareWeight smthHasWeigt); /*{
+    CompareResult compareWeight(CompareWeight smthHasWeigt);
+
+
+
+    public double getWeight();
+
+
+    public static void sort(CompareWeight[] a);
+
+}
+
+
+
+
+
+
+
+
+
+  /*{
         int doubcom = Double.compare(this.getWeight(), smthHasWeigt.getWeight());             //2
         switch (doubcom) {
             case (-1):
@@ -21,12 +40,3 @@ public interface CompareWeight {
         return CompareWeight.CompareResult.GREATER;
 
     }   */          //3
-
-
-    public double getWeight();
-
-
-    public static void sort(CompareWeight[] a);
-
-}
-
