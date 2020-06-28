@@ -56,6 +56,19 @@ public class Animal implements FoodCompare, CompareWeight {
         }
         return CompareWeight.CompareResult.GREATER;
     }
+    @Override
+    public static void sort(CompareWeight[] a) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                CompareWeight c;
+                if (a[i].getWeight() > a[j].getWeight()) {
+                    c = a[i];
+                    a[i] = a[j];
+                    a[j] = c;
+                }
+            }
+
+        }
 
     @Override
     public double getWeight() {
