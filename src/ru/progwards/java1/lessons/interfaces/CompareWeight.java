@@ -15,7 +15,19 @@ public interface CompareWeight {
     public double getWeight();
 
 
-    public static void sort(CompareWeight[] a);
+    public static void sort(CompareWeight[] a) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                CompareWeight swap;
+                if (a[i].getWeight() > a[j].getWeight()) {
+                    swap = a[i];
+                    a[i] = a[j];
+                    a[j] = swap;
+                }
+            }
+
+        }
+    }
 
 }
 
