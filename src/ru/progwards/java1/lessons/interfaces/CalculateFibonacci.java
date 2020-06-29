@@ -32,20 +32,19 @@ public class CalculateFibonacci {
         }
 
 
-        public static CacheInfo getLastFibo() {
-            return lastFibo;
-        }
-
-        public static void clearLastFibo() {
-            lastFibo = null;
-        }
-
-
     }
 
     public static void main(String[] args) {
         System.out.println(fiboNumber(10));
         fiboNumber(10);
 
+    }
+
+    public static CacheInfo getLastFibo() {
+        return lastFibo;
+    }
+
+    public static void clearLastFibo() {
+        lastFibo = null;
     }
 }

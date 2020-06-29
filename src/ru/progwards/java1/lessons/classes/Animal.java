@@ -3,9 +3,20 @@ package ru.progwards.java1.lessons.classes;
 class Animal {
     double weight;
 
+    enum AnimalKind {
+        ANIMAL, COW, HAMSTER, DUCK
+    }
+
+    enum FoodKind {UNKNOWN, HAY, CORN}
+
     public Animal(double weight) {
         this.weight = weight;
     }
+
+    public double getWeight() {
+        return this.weight;
+    }
+
 
     public AnimalKind getKind() {
         return AnimalKind.ANIMAL;
@@ -15,19 +26,11 @@ class Animal {
         return FoodKind.UNKNOWN;
     }
 
-    enum AnimalKind {
-        ANIMAL, COW, HAMSTER, DUCK
-    }
-
-    enum FoodKind {UNKNOWN, HAY, CORN}
 
     public String toString() {
         return ("I am " + this.getKind() + ", eat " + this.getFoodKind());
     }
 
-    public double getWeight() {
-        return this.weight;
-    }
 
     public double getFoodCoeff() {
         switch (getKind()) {
