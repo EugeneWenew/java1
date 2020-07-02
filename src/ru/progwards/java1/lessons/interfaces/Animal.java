@@ -12,9 +12,7 @@ public class Animal implements FoodCompare, CompareWeight {
 
     double weight;
 
-    public interface FoodCompare {                                              //4
-        public int compareFoodPrice();
-    }
+
 
     public double getFood1kgPrice() {
 
@@ -33,7 +31,6 @@ public class Animal implements FoodCompare, CompareWeight {
     public Animal(double weight) {
         this.weight = weight;
     }
-
     public AnimalKind getKind() {
         return AnimalKind.ANIMAL;
     }                   //1

@@ -101,11 +101,11 @@ public class Task6 {
     }
 }
 
-class Rectangle {
+class Rectangle_6 {
     private double a;
     private double b;
 
-    public Rectangle(double a, double b) {
+    public Rectangle_6(double a, double b) {
         this.a = a;
         this.b = b;
     }
@@ -115,14 +115,16 @@ class Rectangle {
         return a * b;
     }
 
-    public int compareTo(Rectangle anRectangle) {
+    public int compareTo(Rectangle_6 anRectangle) {
         Double s1, s2;                                  // Обертки
-        Rectangle rec1 = new Rectangle(this.a, this.b);
-        Rectangle rec2 = new Rectangle(anRectangle.a, anRectangle.b);
+        Rectangle_6 rec1 = new Rectangle_6(this.a, this.b);
+        Rectangle_6 rec2 = new Rectangle_6(anRectangle.a, anRectangle.b);
         s1 = rec1.area();
         s2 = rec2.area();
         return s1.compareTo(s2);
     }
+
+
 }
 
 
