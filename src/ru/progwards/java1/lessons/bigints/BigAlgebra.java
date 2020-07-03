@@ -1,7 +1,5 @@
 package ru.progwards.java1.lessons.bigints;
 
-import ru.progwards.java1.lessons.bitsworld.Binary;
-
 import java.math.BigDecimal;
 
 public class BigAlgebra {
