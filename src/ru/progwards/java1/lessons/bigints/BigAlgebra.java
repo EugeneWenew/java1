@@ -9,7 +9,7 @@ public class BigAlgebra {
         if (pow == 0) return BigDecimal.valueOf(1);        //проверка нулевой степени
         String BYNPOW = Integer.toString(pow, 2);      //представление степени двоичным числом
         BigDecimal res = (num);             //инициализация результата НУЛЕМ
-        for (int i = BYNPOW.length() - 1; i >= 0; i--) {    //цикл перебора от СТАРШЕГО бита к МЛАДШЕМУ
+        for (int i = BYNPOW.length() - 1; i > 0; i--) {    //цикл перебора от СТАРШЕГО бита к МЛАДШЕМУ
             if (BYNPOW.charAt(i) == '1') {                  //считывание значения бита
                 res = (res.multiply(res)).multiply(num);
             } else res = res.multiply(res);
@@ -20,7 +20,7 @@ public class BigAlgebra {
     public static void main(String[] args) {
 
         BigAlgebra cadabra = new BigAlgebra();
-        System.out.println(cadabra.fastPow(BigDecimal.valueOf(2), 1));
+        System.out.println(cadabra.fastPow(BigDecimal.valueOf(3), 7));
 
     }
 }
