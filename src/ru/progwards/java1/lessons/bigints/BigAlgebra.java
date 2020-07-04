@@ -1,6 +1,7 @@
 package ru.progwards.java1.lessons.bigints;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 public class BigAlgebra {
     BigDecimal fastPow(BigDecimal num, int pow) {
@@ -15,10 +16,26 @@ public class BigAlgebra {
         return res;
     }
 
+    BigInteger fibonacci(int n) {
+        BigInteger i1 = BigInteger.valueOf(1);
+        BigInteger i2 = BigInteger.valueOf(1);
+        BigInteger i3 = BigInteger.valueOf(0);
+        int count = 3;
+        if (n == 0 | n == 1 | n == 2) i3 = BigInteger.valueOf(1);
+        while (count <= n) {
+            i3 = i1.add(i2);
+            i1 = i2;
+            i2 = i3;
+            count++;
+        }
+        return i3;
+    }
+
     public static void main(String[] args) {
 
         BigAlgebra cadabra = new BigAlgebra();
         System.out.println(cadabra.fastPow(BigDecimal.valueOf(3), 7));
+        System.out.println(cadabra.fibonacci(10));
 
     }
 }
