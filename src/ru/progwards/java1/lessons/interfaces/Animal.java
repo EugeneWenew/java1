@@ -13,7 +13,6 @@ public class Animal implements FoodCompare, CompareWeight {
     double weight;
 
 
-
     public double getFood1kgPrice() {
 
         switch (getFoodKind()) {
@@ -31,6 +30,7 @@ public class Animal implements FoodCompare, CompareWeight {
     public Animal(double weight) {
         this.weight = weight;
     }
+
     public AnimalKind getKind() {
         return AnimalKind.ANIMAL;
     }                   //1
@@ -53,7 +53,6 @@ public class Animal implements FoodCompare, CompareWeight {
         }
         return CompareWeight.CompareResult.GREATER;
     }
-
 
 
     @Override
