@@ -17,10 +17,4 @@ class ByteInteger extends AbsInteger {          //byte class
         return ""+num;
     }
 
-
-//    public byte byteGetNum(int num) {
-//        return (byte) num;
-//    }
-
-
 }

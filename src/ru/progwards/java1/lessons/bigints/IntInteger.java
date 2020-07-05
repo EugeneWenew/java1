@@ -17,9 +17,5 @@ class IntInteger extends AbsInteger {       //int class
     public String toString() {
         return ""+num;
     }
-
-//       public int intGetNum(int num) {
-//          return (int) num;
-//      }
 }
 
