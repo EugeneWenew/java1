@@ -15,9 +15,7 @@ class IntInteger extends AbsInteger {       //int class
 
     @Override
     public String toString() {
-        return "IntInteger{" +
-                "num=" + num +
-                '}';
+        return ""+num;
     }
 
 //       public int intGetNum(int num) {

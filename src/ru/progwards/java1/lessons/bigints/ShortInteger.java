@@ -14,9 +14,7 @@ class ShortInteger extends AbsInteger {         //short class
 
     @Override
     public String toString() {
-        return "ShortInteger{" +
-                "num=" + num +
-                '}';
+        return ""+num;
     }
 
 //    public short shortGetNum(int num) {

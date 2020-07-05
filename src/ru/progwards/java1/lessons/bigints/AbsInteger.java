@@ -7,9 +7,7 @@ abstract public class AbsInteger {
 
     @Override
     public String toString() {
-        return "AbsInteger{" +
-                "num=" + num +
-                '}';
+        return ""+num;
     }
 
     public int intValue(int num) {
