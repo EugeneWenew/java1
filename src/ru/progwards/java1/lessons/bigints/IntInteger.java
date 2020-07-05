@@ -10,7 +10,7 @@ class IntInteger extends AbsInteger {       //int class
 
     @Override
     public int intValue() {
-        return (int) this.num;
+        return num;
     }
 
     @Override

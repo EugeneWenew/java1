@@ -9,7 +9,7 @@ class ShortInteger extends AbsInteger {         //short class
 
     @Override
     public int intValue() {
-        return (short) this.num;
+        return num;
     }
 
     @Override

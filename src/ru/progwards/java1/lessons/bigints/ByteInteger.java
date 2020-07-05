@@ -9,8 +9,7 @@ class ByteInteger extends AbsInteger {          //byte class
 
     @Override
     public int intValue() {
-        int Num = this.num;
-        return (byte) Num;
+        return num;
     }
 
     @Override
