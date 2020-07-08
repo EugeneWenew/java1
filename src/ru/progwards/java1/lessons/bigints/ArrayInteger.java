@@ -72,11 +72,26 @@ public class ArrayInteger {
 
                     this.digits[i] -= 10;
                     this.digits[i - 1] += 1;
-                    count++;
+
+
 //                    if(this.digits[0]>=10) return false;
                 }
             }
-        }
+        } else {
+            for (int i = this.digits.length - 1; i >= 0; i--) {
+                this.digits[i] = (byte) (this.digits[i] + num.digits[num.digits.length - 1 - count]);
+                count++;
+                if (this.digits[i] >= 10) {
+                    if (i == 0) {
+                        fromInt(new BigInteger("0"));
+                        return false;
+                    }
+
+                    this.digits[i] -= 10;
+                    this.digits[i - 1] += 1;
+
+
+                }
 
 //        if (digits.length < num.digits.length) {
 //            if (digits[0] + num.digits[num.digits.length - digits.length - 1] >= 10)
@@ -86,6 +101,9 @@ public class ArrayInteger {
 //            if (num.digits[0] + digits[digits.length - num.digits.length - 1] >= 10)
 //                return false;
 //        }
+
+            }
+        }
         return true;
     }
 
@@ -93,9 +111,9 @@ public class ArrayInteger {
         ArrayInteger arr1 = new ArrayInteger(15);
         ArrayInteger arr2 = new ArrayInteger(20);
 //        System.out.println(Arrays.toString(arr1.digits));
-        arr1.fromInt(new BigInteger("123455"));
+        arr1.fromInt(new BigInteger("28598"));
         System.out.println(Arrays.toString(arr1.digits));
-        arr2.fromInt(new BigInteger("987654"));
+        arr2.fromInt(new BigInteger("2035575"));
         System.out.println(Arrays.toString(arr2.digits));
         System.out.println(arr2.add(arr1));
         System.out.println(arr1.toString());
@@ -109,4 +127,5 @@ public class ArrayInteger {
                 "digits=" + Arrays.toString(digits) +
                 '}';
     }
+
 }
