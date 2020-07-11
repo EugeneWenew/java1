@@ -2,12 +2,13 @@ public class Task4 {
     public static void main(String[] args) {
         /*System.out.println(addAsStrings(14256, 908));
         System.out.println(textGrade(102));
-        System.out.println(factorial(6));*/
+        System.out.println(factorial(6));
         System.out.println(!(2*2 == 5));
         System.out.println(true && false || true);
         System.out.println(2*2 == 5 && 2*2 == 4);
         System.out.println(true && false);
-        System.out.println(true || false);
+        System.out.println(true || false);*/
+        System.out.println(addAsStrings(123,456));
 
 
 
@@ -17,7 +18,14 @@ public class Task4 {
 
 
     }
+    static int addAsStrings(int n1, int n2) {
+        String swap = Integer.toString(n1+n2);
+        int i =Integer.parseInt(swap);
+        return i;
+    }
 
+
+/*
     static int addAsStrings(int n1, int n2) {
         Integer int1 = n1;
         Integer int2 = n2;
@@ -25,7 +33,7 @@ public class Task4 {
         String str2 = int2.toString();
         int int3 = Integer.parseInt(str1 + str2);
         return int3;
-    }
+    }*/
 
     static String textGrade(int grade) {
         if (grade == 0) return "не оценено";
