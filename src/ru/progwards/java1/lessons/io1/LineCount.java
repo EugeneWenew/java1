@@ -7,22 +7,21 @@ import java.util.Scanner;
 
 public class LineCount {
 
-    public static int calcEmpty(String fileName) throws IOException {
+    public static int calcEmpty(String fileName) {       //метод опасный throws IOException
         int result = 0;
         try {
-            FileReader f = new FileReader(fileName);
-            Scanner s = new Scanner(f);
-            while (s.hasNextLine()) {
-                String str = s.nextLine();
+            FileReader reader = new FileReader(fileName);
+            Scanner scanner = new Scanner(reader);
+            while (scanner.hasNextLine()) {
+                String str = scanner.nextLine();
                 if (str.equals("")) result++;
             }
-            s.close();
-            f.close();
-        } catch (FileNotFoundException e) {
-            throw new FileNotFoundException("-1");
-        } catch (IOException e) {
-            e.printStackTrace();
+            scanner.close();
+            reader.close();
+        } catch (Throwable e) {
+            return -1;
         }
+
         return result;
     }
 
