@@ -38,7 +38,7 @@ public class Coder {
 
             try {
                 logFile = new FileWriter(logName);
-                logFile.write();
+                logFile.write(e.getMessage());
             } catch (IOException e1) {
                 if (logFile!= null)
                     try {
