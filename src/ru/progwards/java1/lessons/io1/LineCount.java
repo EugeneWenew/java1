@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class LineCount {
 
-    public static int calcEmpty(String fileName) {       //метод опасный throws IOException
+    public static int calcEmpty(String fileName) {
         int result = 0;
         try {
             FileReader reader = new FileReader(fileName);
@@ -21,9 +21,6 @@ public class LineCount {
         } catch (Throwable e) {
             return -1;
         }
-
         return result;
     }
-
-
 }

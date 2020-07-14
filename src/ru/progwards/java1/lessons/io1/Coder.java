@@ -14,6 +14,9 @@ import java.util.Scanner;
 // sout (e.getMessage)
 //   }
 //кодирование
+//byte[] bytes   {[q] [w] [e] [r] [t] [y] [u]}
+//char[] code    {[1] [2] [3] [4] [5] [6] [7]}
+//outFileName    "                           "
 
 
 public class Coder {
@@ -24,7 +27,11 @@ public class Coder {
             try {
                 byte[] bytes = byteFileRead.readAllBytes();
                 for (byte b = 0; b < bytes.length; b++) {
-                    byteFileWrite.write(b);
+                    for (int i = 0; i < code.length; i++) {
+                        if (bytes[b] == code[i]) {
+                            byteFileWrite.write(i);
+                        }
+                    }
                 }
             } finally {
                 try {
@@ -40,10 +47,11 @@ public class Coder {
                 logFile = new FileWriter(logName);
                 logFile.write(e.getMessage());
             } catch (IOException e1) {
-                if (logFile!= null)
+                if (logFile != null)
                     try {
                         logFile.close();
-                    }catch (IOException e2){};
+                    } catch (IOException e2) {
+                    }
             }
             e.printStackTrace();
         }
