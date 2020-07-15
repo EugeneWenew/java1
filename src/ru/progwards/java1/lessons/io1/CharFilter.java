@@ -31,14 +31,14 @@ public class CharFilter {
         } catch (IOException e) {
         }
     }
-
-    public static void main(String[] args) {
-        String str = new String("123.txt");
-        String str2 = new String("456.txt");
-        String filter = new String("456.txt");
-
-        System.out.println(filterFile(str,str2,filter));
-    }
+//
+//    public static void main(String[] args) {
+//        String str = new String("123.txt");
+//        String str2 = new String("456.txt");
+//        String filter = new String("456.txt");
+//
+//        System.out.println(filterFile(str,str2,filter));
+//    }
 
 
 }
