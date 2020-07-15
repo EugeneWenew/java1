@@ -22,22 +22,22 @@ import java.util.Scanner;
 public class Coder {
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
         try {
-            FileInputStream byteFileRead = new FileInputStream(inFileName);
-            FileOutputStream byteFileWrite = new FileOutputStream(outFileName);
+            FileInputStream FileInput = new FileInputStream(inFileName);
+            FileOutputStream FileOutput = new FileOutputStream(outFileName);
             try {
-                byte[] bytes = byteFileRead.readAllBytes();
+                byte[] bytes = FileInput.readAllBytes();
                 for (byte b = 0; b < bytes.length; b++) {
                     for (int i = 0; i < code.length; i++) {
                         if (bytes[b] == code[i]) {
-                            byteFileWrite.write(i);
+                            FileOutput.write(i);
                         }
                     }
                 }
             } finally {
                 try {
-                    byteFileRead.close();
+                    FileInput.close();
                 } finally {
-                    byteFileWrite.close();
+                    FileOutput.close();
                 }
             }
         } catch (IOException e) {
@@ -53,7 +53,6 @@ public class Coder {
                     } catch (IOException e2) {
                     }
             }
-            e.printStackTrace();
         }
     }
 }
