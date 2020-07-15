@@ -22,22 +22,18 @@ import java.util.Scanner;
 public class Coder {
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
         try {
-            FileInputStream FileInput = new FileInputStream(inFileName);
-            FileOutputStream FileOutput = new FileOutputStream(outFileName);
+            FileReader fileReader = new FileReader(inFileName);
+            FileWriter fileWriter = new FileWriter(outFileName);
             try {
-                byte[] bytes = FileInput.readAllBytes();
-                for (byte b = 0; b < bytes.length; b++) {
-                    for (int i = 0; i < code.length; i++) {
-                        if (bytes[b] == code[i]) {
-                            FileOutput.write(i);
-                        }
-                    }
+                for (int ch = fileReader.read(); ch >= 0; ) {       //код "0" ?
+                    char newChar = code[ch];
+                    fileWriter.write(newChar);                //
                 }
             } finally {
                 try {
-                    FileInput.close();
+                    fileReader.close();
                 } finally {
-                    FileOutput.close();
+                    fileWriter.close();
                 }
             }
         } catch (IOException e) {
@@ -54,5 +50,17 @@ public class Coder {
                     }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        char[] mass = new char[65536];
+        for (int i = 0; i < mass.length - 1; i++) {
+            mass[i] = (char) i;
+        }
+        System.out.println(mass);
+        String str = new String("123.txt");
+        String str2 = new String("456.txt");
+        String str3 = new String("log.txt");
+        codeFile(str, str2, mass, str3);
     }
 }

@@ -1,34 +1,35 @@
 package ru.progwards.java1.lessons.io1;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class CharFilter {
-    public static void filterFile(String inFileName, String outFileName, String filter) {
+    public static void filterFile(String inFileName, String outFileName, String filter) {    //throws IOexception
+        FileReader fileInput = null;
+        FileWriter fileOutput = null;
         try {
-            FileInputStream FileInput = new FileInputStream(inFileName);
-            FileOutputStream FileOutput = new FileOutputStream(outFileName);
+             fileInput = new FileReader(inFileName);
+             fileOutput = new FileWriter(outFileName);
             char[] charCode = filter.toCharArray();
             try {
-                byte[] bytes = FileInput.readAllBytes();
+                byte[] bytes = fileInput.read();
                 for (int b = 0; b < bytes.length; b++) {
                     for (int i = 0; i < charCode.length; i++) {
                         if (bytes[b] == charCode[b]) {
                             System.arraycopy(bytes, b + 1, bytes, b, bytes.length - b);
-                            FileOutput.write(i);
+                            fileOutput.write(i);
                         }
                     }
                 }
             } finally {
                 try {
-                    FileInput.close();
+                    fileInput.close();
                 } finally {
-                    FileOutput.close();
+                    fileOutput.close();
                 }
             }
-        } catch (IOException e) {
+        } finally {
+            if fileInput !=
+
         }
     }
 //
