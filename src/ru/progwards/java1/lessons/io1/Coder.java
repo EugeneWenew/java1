@@ -25,9 +25,13 @@ public class Coder {
             FileReader fileReader = new FileReader(inFileName);
             FileWriter fileWriter = new FileWriter(outFileName);
             try {
-                for (int ch = fileReader.read(); ch >= 0; ) {       //код "0" ?
+                int ch = fileReader.read();
+                while (ch >= 0) {       //код "0" ?
                     char newChar = code[ch];
-                    fileWriter.write(newChar);                //
+//                    fileWriter.write(newChar);                //каретка 13
+
+                    System.out.println(ch + " " + newChar);
+                    ch = fileReader.read();
                 }
             } finally {
                 try {
@@ -53,14 +57,15 @@ public class Coder {
     }
 
     public static void main(String[] args) {
-        char[] mass = new char[65536];
+        char[] mass = new char[100];
         for (int i = 0; i < mass.length - 1; i++) {
             mass[i] = (char) i;
         }
-        System.out.println(mass);
+        String code = "hsbvjskbkjvbbvlwbnbn;brnaiowrhgawrbvwajrnihgaiurghaowirlnbjaiwgoefj ezirgaowiugvbzlfdislgiwahaurgvbiqwertyuiop";
+//        System.out.println(mass);
         String str = new String("123.txt");
         String str2 = new String("456.txt");
         String str3 = new String("log.txt");
-        codeFile(str, str2, mass, str3);
+        codeFile(str, str2, code.toCharArray(), str3);
     }
 }
