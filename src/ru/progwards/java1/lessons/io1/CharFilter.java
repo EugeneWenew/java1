@@ -15,8 +15,9 @@ public class CharFilter {
                 //  dfg
                 int ch = fileInput.read();
                 for (int i = 0; i < code.length; i++) {                     //  contains ??
-                    if (inFileName.contains(String.valueOf(code[i]))) System.arraycopy(inFileName,i+1,inFileName,i,inFileName.length()-i);                  //  fileInput ??     (filter)             //to String ??
-                    fileOutput.write(inFileName);                                   //.write или arraycopy
+                    if (inFileName.contains(String.valueOf(code[i])) != true) {            //System.arraycopy(inFileName,i+1,inFileName,i,inFileName.length()-i);                  //  fileInput ??     (filter)             //to String ??
+                        fileOutput.write(inFileName);                                   //.write или arraycopy
+                    }
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -46,7 +47,8 @@ public class CharFilter {
         char chr = (char) ch;
 //        System.out.println(ch);
 //        System.out.println(chr);
-
+        String code = "a3";
+        filterFile("123.txt", "456.txt", code);
 
     }
 }
