@@ -27,11 +27,11 @@ public class Coder {
             try {
                 int ch = fileReader.read();
                 while (ch >= -1) {       //код "0" ?
+                    char newChar = code[ch];
+//                    fileWriter.write(ch);                //каретка 13
 
-                    fileWriter.write(ch);                //каретка 13
-
-//                        System.out.println(ch + " " + newChar);
-//                        ch = fileReader.read();
+                        System.out.println(ch + " " + newChar);
+                        ch = fileReader.read();
                 }
             } finally {
                 fileReader.close();
