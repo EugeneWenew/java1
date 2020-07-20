@@ -26,19 +26,16 @@ public class Coder {
             FileWriter fileWriter = new FileWriter(outFileName);
             try {
                 int ch = fileReader.read();
-                while (ch >= 0) {       //код "0" ?
-                    char newChar = code[ch];
-//                    fileWriter.write(newChar);                //каретка 13
+                while (ch >= -1) {       //код "0" ?
 
-                    System.out.println(ch + " " + newChar);
-                    ch = fileReader.read();
+                    fileWriter.write(ch);                //каретка 13
+
+//                        System.out.println(ch + " " + newChar);
+//                        ch = fileReader.read();
                 }
             } finally {
-                try {
-                    fileReader.close();
-                } finally {
-                    fileWriter.close();
-                }
+                fileReader.close();
+                fileWriter.close();
             }
         } catch (IOException e) {
             FileWriter logFile = null;
