@@ -28,10 +28,11 @@ public class Coder {
                 int ch = fileReader.read();
                 while (ch != -1) {       //код "0" ?
                     char newChar = code[ch];
-//                    fileWriter.write(ch);                //каретка 13
+//                                    //каретка 13
 
                         System.out.println(ch + " " + newChar);
                         ch = fileReader.read();
+                        fileWriter.write(ch);
                 }
             } finally {
                 fileReader.close();
@@ -63,6 +64,6 @@ public class Coder {
         String str = new String("123.txt");
         String str2 = new String("456.txt");
         String str3 = new String("log.txt");
-        codeFile(str, str2, code.toCharArray(), str3);
+        codeFile(str, "456.txt", code.toCharArray(), str3);
     }
 }
