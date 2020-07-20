@@ -26,7 +26,7 @@ public class Coder {
             FileWriter fileWriter = new FileWriter(outFileName);
             try {
                 int ch = fileReader.read();
-                while (ch >= -1) {       //код "0" ?
+                while (ch != -1) {       //код "0" ?
                     char newChar = code[ch];
 //                    fileWriter.write(ch);                //каретка 13
 
