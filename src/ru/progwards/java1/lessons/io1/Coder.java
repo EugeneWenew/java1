@@ -17,7 +17,7 @@ import java.util.Scanner;
 //byte[] bytes   {[q] [w] [e] [r] [t] [y] [u]}
 //char[] code    {[1] [2] [3] [4] [5] [6] [7]}
 //outFileName    "                           "
-
+//                                    //каретка 13
 
 public class Coder {
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
@@ -26,14 +26,10 @@ public class Coder {
             FileWriter fileWriter = new FileWriter(outFileName);
             try {
                 int ch = fileReader.read();
-                while (ch != -1) {       //код "0" ?
-
+                while (ch != -1) {
                     char newChar = code[ch];
-//                                    //каретка 13
-
                     System.out.println(ch + " " + newChar);
-
-                    fileWriter.write(ch);
+                    fileWriter.write(newChar);
                     ch = fileReader.read();
                 }
             } finally {
