@@ -35,6 +35,8 @@ public class Coder {
             } finally {
                 fileReader.close();
                 fileWriter.close();
+
+
             }
         } catch (IOException e) {
             FileWriter logFile = null;
@@ -43,6 +45,8 @@ public class Coder {
                 logFile = new FileWriter(logName);
                 logFile.write(e.getMessage());
             } catch (IOException e1) {
+
+            } finally {
                 if (logFile != null)
                     try {
                         logFile.close();
@@ -59,7 +63,7 @@ public class Coder {
         }
         String code = "hsbvjskbkjvbbvlwbnbn;brnaiowrhgawrbvwajrnihgaiurghaowirlnbjaiwgoefj ezirgaowiugvbzlfdislgiwahaurgvbiqwertyuiop";
 //        System.out.println(mass);
-        String str = new String("123.txt");
+        String str = new String("?123.txt");
         String str2 = new String("456.txt");
         String str3 = new String("log.txt");
         codeFile(str, "456.txt", code.toCharArray(), str3);

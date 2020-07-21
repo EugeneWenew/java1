@@ -3,43 +3,56 @@ package ru.progwards.java1.lessons.io1;
 import java.io.*;
 
 public class CharFilter {
-    public static void filterFile(String inFileName, String outFileName, String filter) {    //throws IOexception
+    static boolean contains(char a, char[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (a == arr[i]) return true;
+
+        }
+        return false;
+    }
+
+    public static void filterFile(String inFileName, String outFileName, String filter) throws IOException {    //throws IOexception
         FileReader fileInput = null;
         FileWriter fileOutput = null;
         try {
             fileInput = new FileReader(inFileName);
             fileOutput = new FileWriter(outFileName);
+
             char[] code = filter.toCharArray();
             try {
-                
-                int ch = fileInput.read();
-                for (int i = 0; i < code.length; i++) {                     //  contains ??
-                    if (inFileName.contains(String.valueOf(code[i])) != true) {            //System.arraycopy(inFileName,i+1,inFileName,i,inFileName.length()-i);                  //  fileInput ??     (filter)             //to String ??
+//                int ch = fileInput.read();                      //
+//                while (ch != -1) {                              //
+                for (int ch; (ch = fileInput.read()) != -1; ) {
 
-                        fileOutput.write(inFileName);                                   //.write или arraycopy
-                    }
+                    char chr = (char) ch;
+                    if (!contains(chr, code))
+                        fileOutput.write(chr);
+
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
+            }
+//            finally {                       /**/
+//                fileInput.close();
+//                fileOutput.close();
+//            }                               /**/
+        } catch (IOException e) {
+            throw e;
+        } finally {
+            try {
+                fileInput.close();
             } catch (IOException e) {
-                e.printStackTrace();
             } finally {
+
                 try {
-                    fileInput.close();
-                } finally {
                     fileOutput.close();
+                } catch (IOException ioException) {
                 }
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-
-
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int ch = 97;
         char chr = (char) ch;
 //        System.out.println(ch);
