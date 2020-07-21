@@ -33,9 +33,14 @@ public class Coder {
                     ch = fileReader.read();
                 }
             } finally {
-                fileReader.close();
-                fileWriter.close();
-
+                try {
+                    fileReader.close();
+                    fileWriter.close();
+                } catch (IOException e2) {
+                } finally {
+                    fileReader.close();
+                    fileWriter.close();
+                }
 
             }
         } catch (IOException e) {
