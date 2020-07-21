@@ -32,6 +32,20 @@ public class Coder {
                     fileWriter.write(newChar);
                     ch = fileReader.read();
                 }
+            } catch (IOException e) {
+                FileWriter logFile = null;
+                try {
+                    logFile = new FileWriter(logName);
+                    logFile.write(e.getMessage());
+                } catch (IOException e1) {
+
+                } finally {
+                    if (logFile != null)
+                        try {
+                            logFile.close();
+                        } catch (IOException e2) {
+                        }
+                }
             } finally {
                 try {
                     fileReader.close();
@@ -41,7 +55,6 @@ public class Coder {
                     fileReader.close();
                     fileWriter.close();
                 }
-
             }
         } catch (IOException e) {
             FileWriter logFile = null;
