@@ -56,16 +56,5 @@ public class Coder {
         }
     }
 
-    public static void main(String[] args) {
-        char[] mass = new char[100];
-        for (int i = 0; i < mass.length - 1; i++) {
-            mass[i] = (char) i;
-        }
-        String code = "hsbvjskbkjvbbvlwbnbn;brnaiowrhgawrbvwajrnihgaiurghaowirlnbjaiwgoefj ezirgaowiugvbzlfdislgiwahaurgvbiqwertyuiop";
-//        System.out.println(mass);
-        String str = new String("?123.txt");
-        String str2 = new String("456.txt");
-        String str3 = new String("log.txt");
-        codeFile(str, "456.txt", code.toCharArray(), str3);
-    }
+
 }
