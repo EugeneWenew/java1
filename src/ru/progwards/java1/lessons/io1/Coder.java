@@ -24,6 +24,7 @@ public class Coder {
         try {
             FileReader fileReader = new FileReader(inFileName);
             FileWriter fileWriter = new FileWriter(outFileName);
+            FileWriter logFile = new FileWriter(logName);
             try {
                 int ch = fileReader.read();
                 while (ch != -1) {
@@ -33,9 +34,8 @@ public class Coder {
                     ch = fileReader.read();
                 }
             } catch (IOException e) {
-                FileWriter logFile = null;
+//                FileWriter logFile = null;
                 try {
-                    logFile = new FileWriter(logName);
                     logFile.write(e.getMessage());
                 } catch (IOException e1) {
 
@@ -50,17 +50,15 @@ public class Coder {
                 try {
                     fileReader.close();
                     fileWriter.close();
-                } catch (IOException e2) {
-                } finally {
-                    fileReader.close();
-                    fileWriter.close();
+                    logFile.close();
+                } catch (IOException e) {
+//                    e.printStackTrace();
                 }
             }
         } catch (IOException e) {
             FileWriter logFile = null;
 
             try {
-                logFile = new FileWriter(logName);
                 logFile.write(e.getMessage());
             } catch (IOException e1) {
 
