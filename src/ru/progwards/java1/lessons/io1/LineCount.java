@@ -23,8 +23,5 @@ public class LineCount {
     }
 
 
-    public static void main(String[] args) {
-        String str = new String("123.txt");
-        System.out.println(calcEmpty(str));
-    }
+
 }

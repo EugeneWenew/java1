@@ -4,11 +4,12 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Coder {
-    public static void codeFile(String inFileName, String outFileName, char[] code, String logName) throws Throwable{
+    public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
 //        try {
+        try (
+                FileWriter logFile = new FileWriter(logName)) {
             try (FileReader fileReader = new FileReader(inFileName);
-                 FileWriter fileWriter = new FileWriter(outFileName);
-                 FileWriter logFile = new FileWriter(logName)) {
+                 FileWriter fileWriter = new FileWriter(outFileName)) {
 //            FileReader fileReader = new FileReader(inFileName);
 //            FileWriter fileWriter = new FileWriter(outFileName);
 //            FileWriter logFile = new FileWriter(logName);
@@ -21,12 +22,20 @@ public class Coder {
                     System.out.println(ch + " " + newChar);
                     fileWriter.write(newChar);
                     ch = fileReader.read();
+
                 }
+            } catch (Throwable e) {
+                logFile.write(e.getMessage());
+            }
+        } catch (Throwable e2) {
+
+        }
+
 //            } catch (IOException e) {
 //                try {
 //                    logFile.write(e.getMessage());
 //                } catch (IOException e1) {
-
+//
 //                } finally {
 //                    if (logFile != null)
 //                        try {
@@ -57,16 +66,9 @@ public class Coder {
 //                    } catch (IOException e2) {
 //                    }
 //            }
-//        }
 
-            }
-//        }
+
     }
 
-    public static void main(String[] args) {
-        try {
-            codeFile("123.txt", "456.txt", "filter.txt", "log.txt");
-        } catch (Throwable e) {
-        }
-    }
+
 }

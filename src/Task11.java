@@ -4,7 +4,7 @@ public class Task11 {
     public void doSomething(int n) throws IOException {
     }
 
-    public void test(int n) {
+    public void test(int n) throws IOException{
         try {
             doSomething(n);
         } catch (IOException e) {
@@ -22,6 +22,29 @@ public class Task11 {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //
 //    public void test(int n) throws IOException{
 //        try {

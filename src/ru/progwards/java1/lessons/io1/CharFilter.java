@@ -52,15 +52,7 @@ public class CharFilter {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        int ch = 97;
-        char chr = (char) ch;
-//        System.out.println(ch);
-//        System.out.println(chr);
-        String code = "a3";
-        filterFile("123.txt", "456.txt", code);
 
-    }
 }
 
 
