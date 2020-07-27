@@ -3,29 +3,18 @@ package ru.progwards.java1.lessons.io1;
 import java.io.*;
 import java.util.Scanner;
 
-
-// Создать статический метод public static void codeFile(String inFileName, String outFileName, char[] code, String logName),
-// в котором прочитать файл inFileName и перекодировать его посимвольно в соответствии с заданным шифром, результат записать в outFileName.
-// Шифр задается маcсивом char[] code, где каждому символу symbol оригинального файла соответствует символ code[(int)symbol] выходного файла.
-// В случае ошибок, в файл с именем logName вывести название ошибки через метод класса Exception - getMessage()
-
-//где finally {logFile.close() }
-//где catch (IOexception e){
-// sout (e.getMessage)
-//   }
-//кодирование
-//byte[] bytes   {[q] [w] [e] [r] [t] [y] [u]}
-//char[] code    {[1] [2] [3] [4] [5] [6] [7]}
-//outFileName    "                           "
-//                                    //каретка 13
-
 public class Coder {
-    public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
-        try {
-            FileReader fileReader = new FileReader(inFileName);
-            FileWriter fileWriter = new FileWriter(outFileName);
-            FileWriter logFile = new FileWriter(logName);
-            try {
+    public static void codeFile(String inFileName, String outFileName, char[] code, String logName) throws Throwable{
+//        try {
+            try (FileReader fileReader = new FileReader(inFileName);
+                 FileWriter fileWriter = new FileWriter(outFileName);
+                 FileWriter logFile = new FileWriter(logName)) {
+//            FileReader fileReader = new FileReader(inFileName);
+//            FileWriter fileWriter = new FileWriter(outFileName);
+//            FileWriter logFile = new FileWriter(logName);
+
+
+//            try {
                 int ch = fileReader.read();
                 while (ch != -1) {
                     char newChar = code[ch];
@@ -33,44 +22,51 @@ public class Coder {
                     fileWriter.write(newChar);
                     ch = fileReader.read();
                 }
-            } catch (IOException e) {
-//                FileWriter logFile = null;
-                try {
-                    logFile.write(e.getMessage());
-                } catch (IOException e1) {
+//            } catch (IOException e) {
+//                try {
+//                    logFile.write(e.getMessage());
+//                } catch (IOException e1) {
 
-                } finally {
-                    if (logFile != null)
-                        try {
-                            logFile.close();
-                        } catch (IOException e2) {
-                        }
-                }
-            } finally {
-                try {
-                    fileReader.close();
-                    fileWriter.close();
-                    logFile.close();
-                } catch (IOException e) {
+//                } finally {
+//                    if (logFile != null)
+//                        try {
+//                            logFile.close();
+//                        } catch (IOException e2) {
+//                        }
+//                }
+//            } finally {
+//                try {
+//                    fileReader.close();
+//                    fileWriter.close();
+//                    logFile.close();
+//                } catch (IOException e) {
 //                    e.printStackTrace();
-                }
-            }
-        } catch (IOException e) {
-            FileWriter logFile = null;
+//                }
+//            }
+//        } catch (IOException e) {
+//            FileWriter logFile = null;
+//
+//            try {
+//                logFile.write(e.getMessage());
+//            } catch (IOException e1) {
+//
+//            } finally {
+//                if (logFile != null)
+//                    try {
+//                        logFile.close();
+//                    } catch (IOException e2) {
+//                    }
+//            }
+//        }
 
-            try {
-                logFile.write(e.getMessage());
-            } catch (IOException e1) {
-
-            } finally {
-                if (logFile != null)
-                    try {
-                        logFile.close();
-                    } catch (IOException e2) {
-                    }
             }
-        }
+//        }
     }
 
-
+    public static void main(String[] args) {
+        try {
+            codeFile("123.txt", "456.txt", "filter.txt", "log.txt");
+        } catch (Throwable e) {
+        }
+    }
 }
