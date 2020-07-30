@@ -1,6 +1,8 @@
 
 import ru.progwards.java1.SeaBattle.SeaBattle;
 
+import java.util.Arrays;
+
 import static ru.progwards.java1.SeaBattle.SeaBattle.FireResult.*;
 
 public class SeaBattleAlg {
@@ -48,23 +50,25 @@ public class SeaBattleAlg {
     }
 
     //     метод инициации поля нулями
-    public static String grid() {
-        String[][] grid = new String[10][10];
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                grid[i][j] = String.valueOf(status.CLEAR);
-            }
-        }
-        return grid;
+    public String[][] setGrid(String[][] grid) {
+        String[][] greed = new String[10][10];
+        Arrays.fill(greed, status.CLEAR);
+        return greed;
     }
-
+public void attack()
 
     //     метод проверки соты поля
 //     планируется проверять соту через switch/case
 //    TODO проблема с внедрением fireResult в метод
     public void gridStatus(SeaBattle seaBattle) {
-        switch (fireResult) {
-            case (status.MISS):
+
+        switch (SeaBattle.FireResult fireResult){
+            case (status.MISS): {
+
+            }
+            case (status.CLEAR):
+            case (status.DESTROYED):
+            case (status.HIT):
 
         }
     }
@@ -73,51 +77,30 @@ public class SeaBattleAlg {
     public void battleAlgorithm(SeaBattle seaBattle) {
         String[][] GRID = new String[10][10];
 //   TODO проблема с исппользованием grid
-        GRID = grid();
+        setGrid(GRID);
         int y;
         int x = seaBattle.getSizeX() - 1;
         for (y = seaBattle.getSizeX() - 1; y > 0; y--) {
             for (x = x + (x % y); x > 0; x = x - 3) {
 //   TODO проблема с исппользованием grid
-                if (grid[x][y] == status.MISS) continue;
+                if (GRID[x][y] == status.MISS) continue;
                 if (x > 9) continue;
 
                 System.out.print(x + "   ");
                 SeaBattle.FireResult fireResult = seaBattle.fire(x, y);     //FireResult &4
-//                if (fireResult == MISS) {
-//                    grid[x][y] = true;
-//                    continue;
-//                }
-//                if (fireResult == HIT) {
-//                    grid[x][y] = true;
-//                    shipDestrCount++;
-////                    seaBattle.fire();
-//                }
-//                //координаты корабля ?5
-//                if (fireResult == DESTROYED) {          //обрамление потопленного корабля  ?6
-////                    shipDestrCount++;
-////                    pole[x][y] = true;
-//                    pole[x - 1][y] = true;
-//                    pole[x + 1][y] = true;
-//                    pole[x][y - 1] = true;
-//                    pole[x][y + 1] = true;
-//                    pole[x - 1][y - 1] = true;
-//                    pole[x - 1][y + 1] = true;
-//                    pole[x + 1][y - 1] = true;
-//                    pole[x - 1][y - 1] = true;
-//                    if (shipDestrCount == 10) break;
-
-            }
-            x--;                            // к месту ли декремент ?
+                if (fireResult == MISS) {
+//
+                }
+                x--;                            // к месту ли декремент ?
 //                System.out.print(fireResult + "   ");
 
-            if (x < 0 || x > 9) continue;
-            System.out.print(x + "   ");
+                if (x < 0 || x > 9) continue;
+                System.out.print(x + "   ");
+            }
+            System.out.println(" ");
         }
-        System.out.println(" ");
-    }
 
-}
+    }
 
 
     // функция для отладки
